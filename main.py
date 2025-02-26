@@ -9,10 +9,9 @@ FOLDER_PATH = r"C:\Users\stijn\Downloads"  # Folder containing the photos
 UPDATE_DATE = True    # Set to True to update the date; False to leave it unchanged
 UPDATE_LOCATION = False  # Set to True if you want to update the GPS location
 
-#set your new meta data
 NEW_DATE_STR = "2021-12-27 12:00:00"  # New date in 'YYYY-MM-DD HH:MM:SS' format
-LATITUDE = 51.4364687
-LONGITUDE = 5.4844615
+NEW_LATITUDE = 51.4364687
+NEW_LONGITUDE = 5.4844615
 # ------------------------------------------
 
 # Function to convert decimal coordinates to EXIF GPS format
@@ -96,7 +95,7 @@ if __name__ == "__main__":
         new_date = datetime.strptime(NEW_DATE_STR, "%Y-%m-%d %H:%M:%S") if UPDATE_DATE else None
 
         if UPDATE_LOCATION:
-            update_all_images_in_folder(FOLDER_PATH, new_date, LATITUDE, LONGITUDE)
+            update_all_images_in_folder(FOLDER_PATH, new_date, NEW_LATITUDE, NEW_LONGITUDE)
         else:
             update_all_images_in_folder(FOLDER_PATH, new_date)
 
